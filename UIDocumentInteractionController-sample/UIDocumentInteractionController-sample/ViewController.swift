@@ -36,13 +36,12 @@ class ViewController: UIViewController {
         }
         try! data?.write(to: url, options: .atomic)
 
+        // UIDocumentInteractionControllerはクラスインスタンスで保持しておく
         controller = UIDocumentInteractionController(url: url)
 
         if !(controller!.presentOpenInMenu(from: sender.frame, in: view, animated: true)) {
             print("ファイルに対応するアプリがありません")
         }
     }
-
-
 }
 
