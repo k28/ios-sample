@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         }
         try! data?.write(to: url, options: .atomic)
 
-        controller = UIDocumentInteractionController.init(url: url)
+        controller = UIDocumentInteractionController(url: url)
 
         if !(controller!.presentOpenInMenu(from: sender.frame, in: view, animated: true)) {
             print("ファイルに対応するアプリがありません")
